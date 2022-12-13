@@ -1,6 +1,6 @@
 {
   "name": "envts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Typed environment variables",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
