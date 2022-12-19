@@ -5,7 +5,7 @@ import { EnvtsOptions } from './types';
 let lastParse: DotenvConfigOutput;
 
 export default <T extends Record<string, unknown>>(options?: EnvtsOptions): T => {
-  const { config, forceLoad } = options ?? {};
+  const { config, forceLoad, onlyStrings } = options ?? {};
 
   if (!lastParse || forceLoad)
     lastParse = dotenvConfig(config);
@@ -16,7 +16,7 @@ export default <T extends Record<string, unknown>>(options?: EnvtsOptions): T =>
     ...process.env,
     ...Object.keys(parsed)
       .reduce((p, c) => Object.assign(p, { 
-        [c]: isNaN(+parsed[c]) ? parsed[c] : +parsed[c],
+        [c]: onlyStrings ? parsed[c] : isNaN(+parsed[c]) ? parsed[c] : +parsed[c],
       }), {}),
   } as T;
 };
