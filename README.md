@@ -25,3 +25,13 @@ const config = envts<Config>();
  * config.DISCORD_BOT_TOKEN
  */
 ```
+
+## Options
+
+```ts
+type EnvtsOptions = {
+  config?: DotenvConfigOptions,
+  forceLoad?: boolean,
+  onlyStrings?: boolean,
+}
+```
