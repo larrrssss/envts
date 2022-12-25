@@ -29,7 +29,7 @@ const config = envts<Config>();
 ## Options
 
 * `config`: Configuration object from `dotenv`
-* forceLoad`: Force load `.env` and ignore cache
+* `forceLoad`: Force load `.env` and ignore cache
 * `onlyStrings`: Parse variables as strings
  
 ```ts
